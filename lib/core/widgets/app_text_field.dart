@@ -104,6 +104,7 @@ class _AppTextFieldState extends State<AppTextField> {
         contentPadding: const EdgeInsets.fromLTRB(24, 18, 16, 18),
         filled: true,
         fillColor: AppColors.white,
+        hoverColor: Colors.transparent,
         suffixIcon: suffix,
         enabledBorder: border(_accent),
         disabledBorder: border(AppColors.border),

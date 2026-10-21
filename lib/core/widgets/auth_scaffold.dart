@@ -35,6 +35,7 @@ class AuthScaffold extends StatelessWidget {
             children: [
               SizedBox(
                 height: 56,
+                width: double.infinity,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
