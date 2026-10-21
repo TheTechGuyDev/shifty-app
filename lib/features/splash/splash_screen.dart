@@ -90,7 +90,13 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       ),
                       child: const Icon(Icons.home_repair_service_rounded, color: AppColors.primary, size: 46),
                     ),
-                    const SizedBox(height: 20),
+                    // Invisible: makes Flutter web download the emoji font
+                    // during the splash, so onboarding emojis never show as boxes.
+                    const Opacity(
+                      opacity: 0,
+                      child: Text('🌲🚙❤️💛', style: TextStyle(fontSize: 2)),
+                    ),
+                    const SizedBox(height: 18),
                     Text(
                       AppConfig.appName,
                       style: GoogleFonts.dmSans(
