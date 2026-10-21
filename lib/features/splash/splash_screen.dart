@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/config/app_config.dart';
+import '../../core/services/auth_service.dart';
 import '../../core/theme/app_colors.dart';
+import '../auth/login_screen.dart';
+import '../auth/welcome_screen.dart';
+import '../home/home_screen.dart';
 import '../onboarding/onboarding_data.dart';
 import '../onboarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  /// Set when the app was opened from a password-reset link.
+  static bool recoveryPending = false;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -37,12 +45,30 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         }
       }
     }
+    var seenOnboarding = false;
+    var remember = true;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      seenOnboarding = prefs.getBool(OnboardingScreen.seenKey) ?? false;
+      remember = prefs.getBool(LoginScreen.rememberKey) ?? true;
+    } catch (_) {}
+    if (AuthService.isSignedIn && !remember) {
+      await AuthService.logout();
+    }
+
     await Future<void>.delayed(const Duration(milliseconds: 1800));
-    if (!mounted) return;
+    if (!mounted || SplashScreen.recoveryPending) return;
+
+    final Widget next = AuthService.isSignedIn
+        ? const HomeScreen()
+        : seenOnboarding
+            ? const WelcomeScreen()
+            : const OnboardingScreen();
+
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         transitionDuration: const Duration(milliseconds: 500),
-        pageBuilder: (_, __, ___) => const OnboardingScreen(),
+        pageBuilder: (_, __, ___) => next,
         transitionsBuilder: (_, anim, __, child) => FadeTransition(opacity: anim, child: child),
       ),
     );

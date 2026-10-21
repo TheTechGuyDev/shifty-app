@@ -15,6 +15,23 @@ class AppTextStyles {
         color: AppColors.dark,
       );
 
+  /// Big grey intro line under screen titles ("Welcome back, you've been missed!").
+  static TextStyle get subtitle => GoogleFonts.dmSans(
+        fontSize: 24,
+        fontWeight: FontWeight.w400,
+        height: 34 / 24,
+        letterSpacing: -0.6,
+        color: AppColors.textSubtle,
+      );
+
+  static TextStyle get navTitle => GoogleFonts.dmSans(
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        height: 28 / 18,
+        letterSpacing: -0.4,
+        color: AppColors.dark,
+      );
+
   static TextStyle get headline6 => GoogleFonts.dmSans(
         fontSize: 14,
         fontWeight: FontWeight.w700,
@@ -29,6 +46,38 @@ class AppTextStyles {
         height: 26 / 16,
         letterSpacing: -0.36,
         color: AppColors.textBody,
+      );
+
+  static TextStyle get input => GoogleFonts.dmSans(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        height: 24 / 16,
+        letterSpacing: -0.3,
+        color: AppColors.dark,
+      );
+
+  static TextStyle get label => GoogleFonts.dmSans(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+        letterSpacing: -0.2,
+        color: AppColors.label,
+      );
+
+  static TextStyle get small => GoogleFonts.dmSans(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        height: 20 / 14,
+        letterSpacing: -0.2,
+        color: AppColors.textBody,
+      );
+
+  static TextStyle get smallBold => small.copyWith(fontWeight: FontWeight.w700);
+
+  static TextStyle get bodyMedium => GoogleFonts.dmSans(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.3,
+        color: AppColors.dark,
       );
 
   static TextStyle get button => headline6.copyWith(color: AppColors.white);

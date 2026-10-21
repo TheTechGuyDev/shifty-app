@@ -22,7 +22,14 @@ class AppColors {
 
   // Text
   static const Color textBody = Color(0x80000000); // black 50%
+  static const Color textSubtle = Color(0xFFB2B2B2); // big grey subtitles
   static const Color textMuted = Color(0x66000000);
+  static const Color label = Color(0xFFA3A3A3);
+
+  // Surfaces and lines
+  static const Color border = Color(0xFFE6E6E8);
+  static const Color field = Color(0xFFF4F5F7);
+  static const Color googleButton = Color(0xFFF3F6F8);
 
   // Overlays
   static const Color white10 = Color(0x1AFFFFFF);

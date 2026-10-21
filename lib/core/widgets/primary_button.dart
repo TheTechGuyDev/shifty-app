@@ -4,6 +4,7 @@ import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
 /// The orange 56px button used across the Figma screens (radius 16).
+/// Disabled state is grey with dark text, as in the designs.
 class PrimaryButton extends StatefulWidget {
   const PrimaryButton({
     super.key,
@@ -29,6 +30,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
 
   @override
   Widget build(BuildContext context) {
+    final textColor = widget.enabled ? AppColors.white : AppColors.dark;
     return AnimatedScale(
       scale: _pressed ? 0.97 : 1,
       duration: const Duration(milliseconds: 120),
@@ -56,13 +58,54 @@ class _PrimaryButtonState extends State<PrimaryButton> {
               ),
             ),
             child: widget.loading
-                ? const SizedBox(
-                    key: ValueKey('loading'),
+                ? SizedBox(
+                    key: const ValueKey('loading'),
                     width: 22,
                     height: 22,
-                    child: CircularProgressIndicator(strokeWidth: 2.5, color: AppColors.white),
+                    child: CircularProgressIndicator(strokeWidth: 2.5, color: textColor),
                   )
-                : Text(widget.label, key: ValueKey(widget.label), style: AppTextStyles.button),
+                : Text(
+                    widget.label,
+                    key: ValueKey('${widget.label}${widget.enabled}'),
+                    style: AppTextStyles.button.copyWith(color: textColor),
+                  ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// White outlined button ("Go to Login page ->").
+class OutlineButtonX extends StatelessWidget {
+  const OutlineButtonX({super.key, required this.label, required this.onPressed, this.trailingArrow = false});
+
+  final String label;
+  final VoidCallback onPressed;
+  final bool trailingArrow;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppColors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: AppColors.border),
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: onPressed,
+        child: SizedBox(
+          height: 56,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(label, style: AppTextStyles.headline6),
+              if (trailingArrow) ...[
+                const SizedBox(width: 10),
+                const Icon(Icons.arrow_forward_rounded, size: 16, color: AppColors.dark),
+              ],
+            ],
           ),
         ),
       ),
