@@ -23,18 +23,7 @@ Widget _offerImage(Offer o, {required double width}) {
           ? Image.network(o.imageUrl!, fit: BoxFit.cover)
           : null;
   if (img == null) return const SizedBox.shrink();
-  // Soft fade on the left edge so the photo blends into the gradient.
-  return SizedBox(
-    width: width,
-    child: ShaderMask(
-      shaderCallback: (r) => const LinearGradient(
-        colors: [Colors.transparent, Colors.black],
-        stops: [0, 0.22],
-      ).createShader(r),
-      blendMode: BlendMode.dstIn,
-      child: img,
-    ),
-  );
+  return SizedBox(width: width, child: img);
 }
 
 void copyCode(BuildContext context, Offer o) {

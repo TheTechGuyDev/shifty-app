@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/config/app_config.dart';
 import '../../core/services/auth_service.dart';
+import '../../core/services/data_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../auth/login_screen.dart';
 import '../auth/welcome_screen.dart';
@@ -45,6 +46,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         }
       }
     }
+    // Warm the service catalogue while the splash shows.
+    DataService.categories().ignore();
     var seenOnboarding = false;
     var remember = true;
     try {
