@@ -59,7 +59,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     await Future<void>.delayed(const Duration(milliseconds: 1800));
     if (!mounted || SplashScreen.recoveryPending) return;
 
-    final Widget next = AuthService.isSignedIn
+    // Design-review shortcut on web: add ?screen=home to the URL to open the dashboard without logging in.
+    final preview = Uri.base.queryParameters['screen'] == 'home';
+    final Widget next = AuthService.isSignedIn || preview
         ? const HomeScreen()
         : seenOnboarding
             ? const WelcomeScreen()
