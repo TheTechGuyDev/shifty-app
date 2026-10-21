@@ -595,9 +595,9 @@ class AppMap extends StatelessWidget {
   final List<LatLng>? fitPoints;
 
   static const _grey = ColorFilter.matrix(<double>[
-    0.28, 0.55, 0.1, 0, 40, //
-    0.28, 0.55, 0.1, 0, 40,
-    0.28, 0.55, 0.1, 0, 40,
+    0.2, 0.4, 0.08, 0, 78, //
+    0.2, 0.4, 0.08, 0, 78,
+    0.2, 0.4, 0.08, 0, 78,
     0, 0, 0, 1, 0,
   ]);
 

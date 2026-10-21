@@ -125,7 +125,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     // during the splash, so onboarding emojis never show as boxes.
                     const Opacity(
                       opacity: 0,
-                      child: Text('🌲🚙❤️💛👋🎉', style: TextStyle(fontSize: 2)),
+                      child: Text('🌲🚙❤️💛👋🎉🏡🏠🏚️🛋️📦🏢🏭🏗️😢🙁😐😄😍🙂', style: TextStyle(fontSize: 2)),
                     ),
                     const SizedBox(height: 18),
                     Text(
