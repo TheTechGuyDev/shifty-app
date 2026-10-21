@@ -1,4 +1,5 @@
-import 'package:file_picker/file_picker.dart';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -20,6 +21,7 @@ import '../../auth/register_screen.dart';
 import '../../booking/booking_widgets.dart';
 import '../../booking/location_screens.dart';
 import '../pro_router.dart';
+import '../pro_widgets.dart';
 
 /// Step 0 of sign-up: what do you want to do?
 class RoleChoiceScreen extends StatefulWidget {
@@ -904,22 +906,15 @@ class _WorkingHoursScreenState extends State<WorkingHoursScreen> {
       );
 }
 
-/// Picks a photo or PDF and returns (bytes, extension).
-Future<(Uint8List, String)?> pickDocumentFile(BuildContext context, {bool imagesOnly = false}) async {
-  final res = await FilePicker.platform.pickFiles(
-    type: FileType.custom,
-    allowedExtensions: imagesOnly ? ['jpg', 'jpeg', 'png', 'webp'] : ['jpg', 'jpeg', 'png', 'webp', 'pdf'],
-    withData: true,
-  );
-  final f = res?.files.firstOrNull;
-  if (f == null || f.bytes == null) return null;
-  if (f.size > 10 * 1024 * 1024) {
+/// Picks a clear photo of a document. Returns (bytes, extension).
+Future<(Uint8List, String)?> pickDocumentFile(BuildContext context) async {
+  final f = await pickPhoto(context);
+  if (f == null) return null;
+  if (f.$1.length > 10 * 1024 * 1024) {
     if (context.mounted) showAppSnack(context, 'File must be 10 MB or smaller', error: true);
     return null;
   }
-  var ext = (f.extension ?? 'jpg').toLowerCase();
-  if (ext == 'jpeg') ext = 'jpg';
-  return (f.bytes!, ext);
+  return f;
 }
 
 class _DocList extends StatelessWidget {
@@ -1019,7 +1014,7 @@ class _IdentityScreenState extends State<IdentityScreen> {
       editing: widget.editing,
       chromeTitle: 'Identity',
       title: 'Verify your identity',
-      subtitle: 'Upload a clear photo or PDF of a valid ID. Only our verification team can see it. It is never shown on your profile.',
+      subtitle: 'Upload a clear photo of a valid ID. Only our verification team can see it. It is never shown on your profile.',
       canNext: _docs.isNotEmpty,
       onNext: () => _next(context, const QualificationsScreen(), widget.editing),
       children: [
