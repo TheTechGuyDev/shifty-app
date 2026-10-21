@@ -45,7 +45,7 @@ class OnboardingPageData {
   final String body;
   final String background;
 
-  /// The gradient card is 437px tall and starts above the screen top.
+  /// Top offset of the 375 x 406 gradient card.
   final double backgroundTop;
 
   /// Small translucent dots: (left, top, size).
@@ -73,37 +73,67 @@ class GlassBubble extends StatelessWidget {
   }
 }
 
+/// Glass bubble with an emoji, matching the Figma bubbles (emoji with soft drop shadow).
+class EmojiBubble extends StatelessWidget {
+  const EmojiBubble(this.emoji, {super.key, required this.size, this.shadow = true});
+  final String emoji;
+  final double size;
+  final bool shadow;
+
+  @override
+  Widget build(BuildContext context) {
+    return GlassBubble(
+      child: Text(
+        emoji,
+        style: TextStyle(
+          fontSize: size,
+          height: 1,
+          shadows: shadow
+              ? const [Shadow(color: Color(0x47000000), blurRadius: 16, offset: Offset(0, 12))]
+              : null,
+        ),
+      ),
+    );
+  }
+}
+
 final List<OnboardingPageData> onboardingPages = [
   const OnboardingPageData(
     title: 'Easy Process',
     body: 'Find all your house needs in one place. We provide every service to make your home experience smooth.',
     background: '$_dir/onb1_bg.png',
-    backgroundTop: -31,
+    backgroundTop: 0,
     dots: [(67.0, 79.0, 8.0), (268.0, 343.0, 24.0), (326.0, 165.0, 12.0), (30.0, 140.0, 12.0), (158.0, 109.0, 12.0), (32.0, 239.0, 6.0)],
     layers: [
-      HeroLayer.image('$_dir/onb1_illustration.png', left: -6, top: 108, width: 388, height: 232),
-      HeroLayer.image('$_dir/onb1_tree_bubble.png', left: 37, top: 281, width: 68, height: 77.5, float: true),
-      HeroLayer.image('$_dir/onb1_house_bubble.png', left: 233, top: 87, width: 84, height: 84, float: true),
+      HeroLayer.image('$_dir/onb1_illustration.png', left: 0, top: 108, width: 375, height: 232),
+      HeroLayer.widget(EmojiBubble('🌲', size: 36), left: 38, top: 281, width: 66, height: 66, float: true),
+      HeroLayer.widget(
+        GlassBubble(child: Image(image: AssetImage('$_dir/onb1_house_bubble.png'), width: 84, height: 84)),
+        left: 233, top: 87, width: 84, height: 84, float: true,
+      ),
     ],
   ),
   const OnboardingPageData(
     title: 'Fast Transportation',
     body: 'We provide the best transportation service and organize your furniture properly to prevent any damage.',
     background: '$_dir/onb2_bg.png',
-    backgroundTop: -32,
+    backgroundTop: 0,
     dots: [(292.0, 348.0, 10.0), (110.0, 67.0, 8.0), (326.0, 165.0, 12.0), (35.0, 186.0, 12.0)],
     layers: [
       HeroLayer.image('$_dir/onb2_truck.png', left: 57.7, top: 153.4, width: 275.3, height: 159.1),
-      HeroLayer.image('$_dir/onb2_avatar_bubble.png', left: 222, top: 78, width: 72, height: 72, float: true),
-      HeroLayer.image('$_dir/onb2_car_bubble.png', left: 108, top: 299, width: 66, height: 73.1, float: true),
-      HeroLayer.image('$_dir/onb2_heart_bubble.png', left: 50, top: 83, width: 36, height: 36, float: true),
+      HeroLayer.widget(
+        GlassBubble(child: Image(image: AssetImage('$_dir/onb2_avatar_bubble.png'), width: 72, height: 72)),
+        left: 222, top: 78, width: 72, height: 72, float: true,
+      ),
+      HeroLayer.widget(EmojiBubble('🚙', size: 30), left: 108, top: 299, width: 66, height: 66, float: true),
+      HeroLayer.widget(EmojiBubble('❤️', size: 18, shadow: false), left: 50, top: 83, width: 36, height: 36, float: true),
     ],
   ),
   OnboardingPageData(
     title: 'Expert People',
     body: 'We have the best in class individuals working just for you. They are well trained and capable of handling anything you need.',
     background: '$_dir/onb3_bg.png',
-    backgroundTop: -32,
+    backgroundTop: 0,
     dots: const [(110.0, 67.0, 8.0), (323.0, 55.0, 12.0), (35.0, 186.0, 12.0)],
     layers: [
       const HeroLayer.image('$_dir/onb3_person.png', left: 63, top: 85, width: 260, height: 249),
@@ -112,7 +142,7 @@ final List<OnboardingPageData> onboardingPages = [
         left: 109, top: 42, width: 66, height: 66, float: true,
       ),
       const HeroLayer.widget(
-        GlassBubble(child: Text('💛', style: TextStyle(fontSize: 14))),
+        EmojiBubble('💛', size: 15, shadow: false),
         left: 44, top: 262, width: 28, height: 28, float: true,
       ),
       HeroLayer.widget(

@@ -54,7 +54,7 @@ class _OnboardingHeroState extends State<OnboardingHero> with SingleTickerProvid
                   left: 0,
                   top: p.backgroundTop,
                   width: 375,
-                  height: 437,
+                  height: 406,
                   child: Image.asset(p.background, fit: BoxFit.fill),
                 ),
                 // Large soft circle behind the illustration.
