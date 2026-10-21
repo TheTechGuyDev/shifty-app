@@ -13,7 +13,7 @@ class DataService {
 
   static Future<List<ServiceCategory>> categories({bool refresh = false}) async {
     if (_categoryCache != null && !refresh) return _categoryCache!;
-    final rows = await _db.from('service_categories').select().order('sort');
+    final rows = await _db.from('service_categories').select().order('sort', ascending: true);
     _categoryCache = rows.map(ServiceCategory.fromMap).toList();
     return _categoryCache!;
   }
@@ -26,7 +26,7 @@ class DataService {
   static Future<List<Offer>> offers({String? section}) async {
     var q = _db.from('offers').select();
     if (section != null) q = q.eq('section', section);
-    final rows = await q.order('sort');
+    final rows = await q.order('sort', ascending: true);
     return rows.map(Offer.fromMap).toList();
   }
 
