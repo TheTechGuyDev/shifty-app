@@ -107,8 +107,18 @@ class DataService {
     return row == null ? null : Booking.fromMap(row);
   }
 
-  static Future<void> cancelBooking(String id) =>
-      _db.from('bookings').update({'status': 'cancelled'}).eq('id', id);
+  static Future<void> cancelBooking(String id) => _db.rpc('customer_cancel_booking', params: {'p_booking': id});
+
+  /// Quotes professionals sent for one of my bookings.
+  static Future<List<Map<String, dynamic>>> quotesFor(String bookingId) async {
+    final rows = await _db.from('booking_offers').select().eq('booking_id', bookingId).eq('status', 'quoted').order('quote_amount', ascending: true);
+    return rows;
+  }
+
+  static Future<void> acceptQuote(String offerId) => _db.rpc('customer_accept_quote', params: {'p_offer': offerId});
+
+  static Future<void> respondReschedule(String bookingId, bool accept) =>
+      _db.rpc('customer_respond_reschedule', params: {'p_booking': bookingId, 'p_accept': accept});
 
   static Future<bool> hasReview(String bookingId) async {
     final rows = await _db.from('reviews').select('id').eq('booking_id', bookingId).limit(1);

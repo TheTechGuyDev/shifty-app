@@ -21,6 +21,7 @@ class AuthService {
     required String address,
     required String zipCode,
     required String state,
+    bool wantsPro = false,
   }) async {
     final res = await _db.auth.signUp(
       email: email.trim(),
@@ -32,6 +33,7 @@ class AuthService {
         'address': address.trim(),
         'zip_code': zipCode.trim(),
         'state': state,
+        if (wantsPro) 'wants_pro': true,
         if (Uri.base.queryParameters['ref'] != null) 'referred_by': Uri.base.queryParameters['ref'],
       },
     );

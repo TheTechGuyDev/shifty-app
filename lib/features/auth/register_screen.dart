@@ -7,15 +7,16 @@ import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/app_text_field.dart';
 import '../../core/widgets/auth_scaffold.dart';
 import '../../core/widgets/primary_button.dart';
-import '../home/home_screen.dart';
+import '../pro/pro_router.dart';
 import 'info_screen.dart';
 import 'login_screen.dart';
 
 /// "Getting Started" registration form.
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key, this.phone = ''});
+  const RegisterScreen({super.key, this.phone = '', this.wantsPro = false});
 
   final String phone;
+  final bool wantsPro;
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -110,10 +111,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         address: _address.text,
         zipCode: _zip.text,
         state: _state!,
+        wantsPro: widget.wantsPro,
       );
       if (!mounted) return;
       if (active) {
-        Navigator.of(context).pushAndRemoveUntil(appRoute(const HomeScreen()), (_) => false);
+        await goToLanding(context);
       } else {
         Navigator.of(context).pushAndRemoveUntil(
           appRoute(InfoScreen(

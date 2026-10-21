@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../../core/models/models.dart';
@@ -9,6 +12,7 @@ import '../../core/utils/format.dart';
 import '../../core/widgets/auth_scaffold.dart';
 import '../../core/widgets/primary_button.dart';
 import '../profile/support_screens.dart';
+import 'booking_pro_panel.dart';
 import 'booking_widgets.dart';
 import 'order_screens.dart';
 
@@ -32,10 +36,27 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   bool _reviewed = true;
   bool _busy = false;
 
+  StreamSubscription? _live;
+
   @override
   void initState() {
     super.initState();
     _load();
+    // Status, progress and reschedule changes arrive live.
+    var first = true;
+    _live = Supabase.instance.client.from('bookings').stream(primaryKey: ['id']).eq('id', widget.bookingId).listen((_) {
+      if (first) {
+        first = false;
+        return;
+      }
+      _load();
+    }, onError: (_) {});
+  }
+
+  @override
+  void dispose() {
+    _live?.cancel();
+    super.dispose();
   }
 
   Future<void> _load() async {
@@ -125,6 +146,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 if (b.scheduledAt != null)
                   Text('${longDate(b.scheduledAt!)} · ${b.timeSlot ?? timeOf(b.scheduledAt!)}', style: AppTextStyles.small),
                 const SizedBox(height: 18),
+                BookingProPanel(booking: b, onChanged: _load),
                 RouteCard(
                   pickup: b.address,
                   dropoff: b.dropoffAddress,

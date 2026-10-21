@@ -172,7 +172,29 @@ class Booking {
     this.paymentStatus = 'unpaid',
     this.lines = const [],
     this.details = const {},
+    this.customerId,
+    this.professionalId,
+    this.progress,
+    this.beforePhotos = const [],
+    this.afterPhotos = const [],
+    this.commission,
+    this.proEarning,
+    this.completedAt,
+    this.reschedule,
   });
+
+  final String? customerId;
+  final String? professionalId;
+  final String? progress;
+  final List<String> beforePhotos;
+  final List<String> afterPhotos;
+  final num? commission;
+  final num? proEarning;
+  final DateTime? completedAt;
+  final Map<String, dynamic>? reschedule;
+
+  DateTime? get rescheduleAt => reschedule?['at'] == null ? null : DateTime.parse(reschedule!['at'] as String).toLocal();
+  String? get rescheduleNote => reschedule?['note'] as String?;
 
   final String id;
   final String reference;
@@ -224,6 +246,15 @@ class Booking {
         paymentStatus: (m['payment_status'] as String?) ?? 'unpaid',
         lines: ((m['breakdown'] as List?) ?? []).map((e) => QuoteLine.fromMap((e as Map).cast<String, dynamic>())).toList(),
         details: ((m['details'] as Map?) ?? {}).cast<String, dynamic>(),
+        customerId: m['customer_id'] as String?,
+        professionalId: m['professional_id'] as String?,
+        progress: m['progress'] as String?,
+        beforePhotos: ((m['before_photos'] as List?) ?? []).cast<String>(),
+        afterPhotos: ((m['after_photos'] as List?) ?? []).cast<String>(),
+        commission: m['commission'] as num?,
+        proEarning: m['pro_earning'] as num?,
+        completedAt: m['completed_at'] == null ? null : DateTime.parse(m['completed_at'] as String).toLocal(),
+        reschedule: (m['reschedule_request'] as Map?)?.cast<String, dynamic>(),
       );
 }
 

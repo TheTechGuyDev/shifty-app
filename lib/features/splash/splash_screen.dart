@@ -7,9 +7,12 @@ import '../../core/config/app_config.dart';
 import '../../core/services/auth_service.dart';
 import '../../core/services/data_service.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/widgets/auth_scaffold.dart';
 import '../auth/login_screen.dart';
 import '../auth/welcome_screen.dart';
 import '../home/home_screen.dart';
+import '../pro/business/business_screens.dart';
+import '../pro/pro_router.dart';
 import '../onboarding/onboarding_data.dart';
 import '../onboarding/onboarding_screen.dart';
 
@@ -64,12 +67,21 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     // Design-review shortcut on web: add ?screen=home to the URL to open the dashboard without logging in.
     final preview = Uri.base.queryParameters['screen'] == 'home';
-    final Widget next = AuthService.isSignedIn || preview
+    final Widget next = preview && !AuthService.isSignedIn
         ? const HomeScreen()
+        : AuthService.isSignedIn
+            ? await landingFor()
         : seenOnboarding
             ? const WelcomeScreen()
             : const OnboardingScreen();
 
+    if (!mounted) return;
+    final proSlug = Uri.base.queryParameters['pro'];
+    if (proSlug != null && proSlug.isNotEmpty && AuthService.isSignedIn) {
+      Navigator.of(context).pushReplacement(appRoute(next));
+      Navigator.of(context).push(appRoute(PublicProfileScreen(slug: proSlug)));
+      return;
+    }
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         transitionDuration: const Duration(milliseconds: 500),

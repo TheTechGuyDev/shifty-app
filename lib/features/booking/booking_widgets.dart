@@ -584,8 +584,10 @@ class AppMap extends StatelessWidget {
     this.interactive = true,
     this.onPositionChanged,
     this.fitPoints,
+    this.circles = const [],
   });
 
+  final List<CircleMarker> circles;
   final LatLng center;
   final double zoom;
   final List<Marker> markers;
@@ -624,6 +626,7 @@ class AppMap extends StatelessWidget {
             userAgentPackageName: 'com.vastagency.shifty',
           ),
         ),
+        if (circles.isNotEmpty) CircleLayer(circles: circles),
         if (markers.isNotEmpty) MarkerLayer(markers: markers),
       ],
     );

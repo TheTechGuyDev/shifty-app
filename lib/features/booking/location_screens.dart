@@ -72,23 +72,23 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
 
   Future<void> _locate({bool initial = false}) async {
     setState(() => _locating = true);
-    final p = await GeoService.currentLocation();
+    final r = await GeoService.locate();
     if (!mounted) return;
     setState(() => _locating = false);
-    if (p == null) {
-      if (!initial) showAppSnack(context, 'Could not get your location. Allow location access or move the map.', error: true);
+    if (r.point == null) {
+      if (!initial) await GeoService.explain(context, r.issue);
       _resolve();
       return;
     }
-    _center = p;
-    _map.move(p, 16.5);
+    _center = r.point!;
+    _map.move(r.point!, 17);
     _resolve();
   }
 
   void _onSearch(String q) {
     _searchDebounce?.cancel();
     _searchDebounce = Timer(const Duration(milliseconds: 600), () async {
-      final r = await GeoService.search(q);
+      final r = await GeoService.search(q, near: _center);
       if (mounted) setState(() => _results = r);
     });
   }
@@ -234,9 +234,9 @@ Future<Place?> defaultPlace() async {
     final home = saved.where((a) => a.label == 'home' && a.lat != null).toList();
     if (home.isNotEmpty) return Place(home.first.address, LatLng(home.first.lat!, home.first.lng!));
   } catch (_) {}
-  final p = await GeoService.currentLocation();
-  if (p == null) return null;
-  return Place(await GeoService.reverse(p), p);
+  final r = await GeoService.locate();
+  if (r.point == null) return null;
+  return Place(await GeoService.reverse(r.point!), r.point!);
 }
 
 class _PointRow extends StatelessWidget {
@@ -441,17 +441,19 @@ class _LocationScreenState extends State<LocationScreen> {
                     busy: _locating,
                     onTap: () async {
                       setState(() => _locating = true);
-                      final p = await GeoService.currentLocation();
+                      final r = await GeoService.locate();
                       if (!mounted) return;
-                      setState(() => _locating = false);
-                      if (p == null) {
-                        showAppSnack(context, 'Could not get your location', error: true);
+                      if (r.point == null) {
+                        setState(() => _locating = false);
+                        await GeoService.explain(context, r.issue);
                         return;
                       }
-                      final a = await GeoService.reverse(p);
+                      final a = await GeoService.reverse(r.point!);
+                      if (!mounted) return;
                       setState(() {
+                        _locating = false;
                         d.address = a;
-                        d.point = p;
+                        d.point = r.point;
                       });
                       _fit();
                     },

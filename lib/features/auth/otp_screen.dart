@@ -8,7 +8,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/auth_scaffold.dart';
 import '../../core/widgets/primary_button.dart';
-import 'register_screen.dart';
+import '../pro/onboarding/pro_onboarding.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key, required this.phone});
@@ -56,7 +56,7 @@ class _OtpScreenState extends State<OtpScreen> {
   void _submit() {
     // Real SMS verification plugs in here once an SMS provider is connected.
     if (AppConfig.otpDevMode && _code.text.length == _length) {
-      Navigator.of(context).pushReplacement(appRoute(RegisterScreen(phone: widget.phone)));
+      Navigator.of(context).pushReplacement(appRoute(RoleChoiceScreen(phone: widget.phone)));
     } else {
       setState(() => _error = true);
     }

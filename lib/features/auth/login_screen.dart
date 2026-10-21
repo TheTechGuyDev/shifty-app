@@ -8,7 +8,7 @@ import '../../core/widgets/app_text_field.dart';
 import '../../core/widgets/auth_scaffold.dart';
 import '../../core/widgets/google_button.dart';
 import '../../core/widgets/primary_button.dart';
-import '../home/home_screen.dart';
+import '../pro/pro_router.dart';
 import 'forgot_password_screen.dart';
 import 'welcome_screen.dart';
 
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
         await prefs.setBool(LoginScreen.rememberKey, _remember);
       } catch (_) {}
       if (!mounted) return;
-      Navigator.of(context).pushAndRemoveUntil(appRoute(const HomeScreen()), (_) => false);
+      await goToLanding(context);
     } catch (e) {
       if (!mounted) return;
       final msg = AuthService.friendlyError(e);

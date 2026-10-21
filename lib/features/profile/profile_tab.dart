@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../chat/chat_screen.dart';
+import '../pro/pro_router.dart';
+
 import '../../core/services/data_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
@@ -99,6 +102,13 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
         ),
         const SizedBox(height: 26),
+        if (p != null) ...[
+          _section('WORK'),
+          _row(Icons.chat_bubble_rounded, 'Messages', 'Chat with your professionals', () => _open(const ConversationsScreen(asPro: false))),
+          _row(Icons.work_rounded, p['is_professional'] == true ? 'Switch to Professional' : 'Become a Professional',
+              p['is_professional'] == true ? 'Manage jobs, quotes and earnings' : 'Offer your services and earn', () => switchMode(context, 'professional')),
+          const SizedBox(height: 18),
+        ],
         _section('GENERAL'),
         _row(Icons.credit_card_rounded, 'Payment Methods', 'Add your credit & debit cards', () {
           if (!_needLogin()) _open(const PaymentMethodsScreen());
