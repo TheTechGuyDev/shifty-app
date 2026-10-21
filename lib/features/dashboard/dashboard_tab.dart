@@ -96,7 +96,7 @@ class _DashboardTabState extends State<DashboardTab> {
               loadingHeight: 137,
               onRetry: _refresh,
               builder: (context, all) {
-                var list = all.where((o) => o.chip == _chip).toList();
+                var list = _chip == 'Trending' ? all : all.where((o) => o.chip == _chip).toList();
                 if (list.isEmpty) list = all;
                 return ListView.separated(
                   key: ValueKey(_chip),

@@ -20,7 +20,7 @@ class DataService {
 
   static Future<List<ServiceCategory>> homeSection(String section) async {
     final all = await categories();
-    return all.where((c) => c.homeSection == section).toList()..sort((a, b) => a.sort.compareTo(b.sort));
+    return all.where((c) => c.homeSection == section).toList()..sort((a, b) => a.homeSort.compareTo(b.homeSort));
   }
 
   static Future<List<Offer>> offers({String? section}) async {

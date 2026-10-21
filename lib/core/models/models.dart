@@ -19,6 +19,7 @@ class ServiceCategory {
     this.badge,
     this.requiresVerification = false,
     this.sort = 0,
+    this.homeSort = 0,
   });
 
   final String id;
@@ -31,6 +32,7 @@ class ServiceCategory {
   final String? badge;
   final bool requiresVerification;
   final int sort;
+  final int homeSort;
 
   bool get isGroup => parentId == null;
 
@@ -45,6 +47,7 @@ class ServiceCategory {
         badge: m['badge'] as String?,
         requiresVerification: (m['requires_verification'] as bool?) ?? false,
         sort: (m['sort'] as int?) ?? 0,
+        homeSort: (m['home_sort'] as int?) ?? 0,
       );
 }
 
