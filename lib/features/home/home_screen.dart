@@ -36,10 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    _loadProfile();
+    _checkUnread();
+  }
+
+  void _loadProfile() {
     AuthService.myProfile().then((p) {
       if (mounted) setState(() => _profile = p);
     }).catchError((_) {});
-    _checkUnread();
   }
 
   void _checkUnread() {
@@ -66,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
       DashboardTab(firstName: firstName),
       HistoryTab(onBookNow: () => setState(() => _tab = 0)),
       const OffersTab(),
-      ProfileTab(profile: _profile, onLogout: _logout),
+      ProfileTab(profile: _profile, onLogout: _logout, onProfileChanged: _loadProfile),
     ];
 
     return Scaffold(

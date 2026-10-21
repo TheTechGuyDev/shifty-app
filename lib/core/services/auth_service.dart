@@ -32,6 +32,7 @@ class AuthService {
         'address': address.trim(),
         'zip_code': zipCode.trim(),
         'state': state,
+        if (Uri.base.queryParameters['ref'] != null) 'referred_by': Uri.base.queryParameters['ref'],
       },
     );
     return res.session != null;

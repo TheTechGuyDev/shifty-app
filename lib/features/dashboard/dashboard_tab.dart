@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/models/models.dart';
@@ -23,7 +25,7 @@ class _DashboardTabState extends State<DashboardTab> {
   late Future<List<Offer>> _offers = DataService.offers(section: 'latest');
   String _chip = 'Trending';
 
-  static const _chips = ['Trending', 'Promotion', 'Summer Offer', 'New', 'Popular'];
+  static const _chips = ['Trending', 'Promotion', 'Summer Offer', 'New', 'Popular', 'Cleaning', 'Moving'];
 
   Future<void> _refresh() async {
     await DataService.categories(refresh: true);
@@ -98,14 +100,7 @@ class _DashboardTabState extends State<DashboardTab> {
               builder: (context, all) {
                 var list = _chip == 'Trending' ? all : all.where((o) => o.chip == _chip).toList();
                 if (list.isEmpty) list = all;
-                return ListView.separated(
-                  key: ValueKey(_chip),
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 26),
-                  itemCount: list.length,
-                  separatorBuilder: (_, __) => const SizedBox(width: 15),
-                  itemBuilder: (context, i) => OfferBanner(offer: list[i]),
-                );
+                return OfferCarousel(key: ValueKey(_chip), offers: list.take(3).toList());
               },
             ),
           ),
@@ -269,6 +264,63 @@ class _OtherService extends StatelessWidget {
               style: AppTextStyles.small.copyWith(fontSize: 13, color: AppColors.dark, fontWeight: FontWeight.w500),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+
+/// Auto-sliding offers carousel (loops, pauses while the user drags).
+class OfferCarousel extends StatefulWidget {
+  const OfferCarousel({super.key, required this.offers});
+  final List<Offer> offers;
+
+  @override
+  State<OfferCarousel> createState() => _OfferCarouselState();
+}
+
+class _OfferCarouselState extends State<OfferCarousel> {
+  static const _loop = 10000;
+  late final PageController _page;
+  Timer? _timer;
+  bool _dragging = false;
+
+  @override
+  void initState() {
+    super.initState();
+    final start = widget.offers.isEmpty ? 0 : _loop ~/ 2 - (_loop ~/ 2) % widget.offers.length;
+    _page = PageController(initialPage: start, viewportFraction: 0.78);
+    _timer = Timer.periodic(const Duration(milliseconds: 3500), (_) {
+      if (_dragging || !_page.hasClients || widget.offers.length < 2) return;
+      _page.nextPage(duration: const Duration(milliseconds: 600), curve: Curves.easeInOutCubic);
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _page.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final n = widget.offers.length;
+    if (n == 0) return const SizedBox.shrink();
+    return NotificationListener<ScrollNotification>(
+      onNotification: (n) {
+        if (n is ScrollStartNotification && n.dragDetails != null) _dragging = true;
+        if (n is ScrollEndNotification) _dragging = false;
+        return false;
+      },
+      child: PageView.builder(
+        controller: _page,
+        padEnds: false,
+        itemCount: n == 1 ? 1 : _loop,
+        itemBuilder: (context, i) => Padding(
+          padding: const EdgeInsets.only(left: 26),
+          child: OfferBanner(offer: widget.offers[i % n], width: double.infinity),
         ),
       ),
     );

@@ -12,6 +12,7 @@ class AppChrome extends StatelessWidget {
     super.key,
     required this.body,
     this.title,
+    this.titleWidget,
     this.onMenu,
     this.onBell,
     this.hasUnread = false,
@@ -23,6 +24,9 @@ class AppChrome extends StatelessWidget {
 
   /// Null shows the logo.
   final String? title;
+
+  /// Custom centre content (e.g. two-line date title). Wins over [title].
+  final Widget? titleWidget;
   final VoidCallback? onMenu;
   final VoidCallback? onBell;
   final bool hasUnread;
@@ -54,9 +58,12 @@ class AppChrome extends StatelessWidget {
                           ),
                       Expanded(
                         child: Center(
-                          child: title == null
+                          child: titleWidget ?? (title == null
                               ? const AppLogo()
-                              : Text(title!, style: AppTextStyles.navTitle.copyWith(color: AppColors.white)),
+                              : Text(title!,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: AppTextStyles.navTitle.copyWith(color: AppColors.white))),
                         ),
                       ),
                       _HeaderButton(

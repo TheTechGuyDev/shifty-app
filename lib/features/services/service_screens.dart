@@ -6,14 +6,11 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/theme/service_icons.dart';
 import '../../core/widgets/async_view.dart';
-import '../../core/widgets/auth_scaffold.dart';
-import '../../core/widgets/primary_button.dart';
+import '../booking/setup_screens.dart';
 import '../shell/app_chrome.dart';
 
-/// Opens the right flow for a service. Booking flows are wired in the next build.
-void openService(BuildContext context, ServiceCategory s) {
-  Navigator.of(context).push(appRoute(ServiceIntroScreen(service: s)));
-}
+/// Opens the booking flow for a service.
+void openService(BuildContext context, ServiceCategory s) => startBooking(context, s);
 
 /// Lists every group and its services (opened from the menu icon).
 class AllServicesScreen extends StatefulWidget {
@@ -117,47 +114,3 @@ class _IconBubble extends StatelessWidget {
   }
 }
 
-/// Temporary landing for a service until its booking flow is built.
-class ServiceIntroScreen extends StatelessWidget {
-  const ServiceIntroScreen({super.key, required this.service});
-  final ServiceCategory service;
-
-  @override
-  Widget build(BuildContext context) {
-    return AuthScaffold(
-      navTitle: service.name,
-      children: [
-        const SizedBox(height: 30),
-        Center(
-          child: Container(
-            width: 110,
-            height: 110,
-            decoration: BoxDecoration(color: Color.lerp(Colors.white, service.color, 0.15), shape: BoxShape.circle),
-            child: Icon(iconFor(service.icon), color: service.color, size: 50),
-          ),
-        ),
-        const SizedBox(height: 28),
-        Text(service.name, style: AppTextStyles.headline1.copyWith(fontSize: 30), textAlign: TextAlign.center),
-        const SizedBox(height: 12),
-        Text(
-          'Booking for this service opens in the next build. You will pick a date, location and get matched with a verified professional.',
-          style: AppTextStyles.paragraph,
-          textAlign: TextAlign.center,
-        ),
-        if (service.requiresVerification) ...[
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(Icons.verified_rounded, color: AppColors.success, size: 18),
-              const SizedBox(width: 6),
-              Text('Qualified professionals only', style: AppTextStyles.smallBold.copyWith(color: AppColors.success)),
-            ],
-          ),
-        ],
-        const SizedBox(height: 36),
-        PrimaryButton(label: 'Back to Home', onPressed: () => Navigator.pop(context)),
-      ],
-    );
-  }
-}

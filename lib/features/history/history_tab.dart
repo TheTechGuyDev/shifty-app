@@ -8,7 +8,9 @@ import '../../core/services/data_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/async_view.dart';
+import '../../core/widgets/auth_scaffold.dart';
 import '../../core/widgets/primary_button.dart';
+import '../booking/booking_detail_screen.dart';
 
 class HistoryTab extends StatefulWidget {
   const HistoryTab({super.key, required this.onBookNow});
@@ -26,6 +28,14 @@ class _HistoryTabState extends State<HistoryTab> {
   bool _grid = false;
 
   Future<void> _refresh() async => setState(() => _future = DataService.myBookings());
+
+  Widget _tap(Booking b, Widget child) => GestureDetector(
+        onTap: () async {
+          await Navigator.of(context).push(appRoute(BookingDetailScreen(bookingId: b.id)));
+          _refresh();
+        },
+        child: child,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -89,14 +99,14 @@ class _HistoryTabState extends State<HistoryTab> {
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2, mainAxisSpacing: 12, crossAxisSpacing: 12, childAspectRatio: 0.85),
                       itemCount: list.length,
-                      itemBuilder: (context, i) => _BookingCard(booking: list[i], compact: true),
+                      itemBuilder: (context, i) => _tap(list[i], _BookingCard(booking: list[i], compact: true)),
                     );
                   }
                   return ListView.separated(
                     padding: const EdgeInsets.fromLTRB(20, 14, 20, 150),
                     itemCount: list.length,
                     separatorBuilder: (_, __) => const SizedBox(height: 18),
-                    itemBuilder: (context, i) => _BookingCard(booking: list[i]),
+                    itemBuilder: (context, i) => _tap(list[i], _BookingCard(booking: list[i])),
                   );
                 },
               ),

@@ -12,12 +12,14 @@ class PrimaryButton extends StatefulWidget {
     required this.onPressed,
     this.enabled = true,
     this.loading = false,
+    this.color = AppColors.primary,
   });
 
   final String label;
   final VoidCallback? onPressed;
   final bool enabled;
   final bool loading;
+  final Color color;
 
   @override
   State<PrimaryButton> createState() => _PrimaryButtonState();
@@ -45,7 +47,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
           width: double.infinity,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: widget.enabled ? AppColors.primary : AppColors.disabled,
+            color: widget.enabled ? widget.color : AppColors.disabled,
             borderRadius: BorderRadius.circular(16),
           ),
           child: AnimatedSwitcher(

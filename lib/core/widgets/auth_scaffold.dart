@@ -133,7 +133,8 @@ void showAppSnack(BuildContext context, String message, {bool error = false}) {
 }
 
 /// Slide-and-fade route used for all forward navigation.
-Route<T> appRoute<T>(Widget page) => PageRouteBuilder<T>(
+Route<T> appRoute<T>(Widget page, {String? name}) => PageRouteBuilder<T>(
+      settings: RouteSettings(name: name),
       transitionDuration: const Duration(milliseconds: 380),
       reverseTransitionDuration: const Duration(milliseconds: 300),
       pageBuilder: (_, __, ___) => page,

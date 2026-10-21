@@ -24,5 +24,19 @@ class AppConfig {
   /// While this is true, the OTP screen accepts any 4-digit code.
   static const bool otpDevMode = true;
 
+  /// Card charging needs a payment provider (e.g. Paystack) connected on the server.
+  /// While this is false, card orders are recorded as unpaid and no money is taken.
+  static const bool paymentsLive = false;
+
   static const String defaultCountryCode = '+234';
+
+  // Support contacts (shown on Contact Us and order confirmation).
+  static const String supportPhone = '+234 800 000 0000';
+  static const String supportEmail = 'support@shifty.app';
+
+  static const String currency = '₦';
+
+  /// Default map centre (Lagos) when location is unknown.
+  static const double defaultLat = 6.5244;
+  static const double defaultLng = 3.3792;
 }

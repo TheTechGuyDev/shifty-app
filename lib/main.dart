@@ -1,3 +1,5 @@
+import 'dart:ui' show PointerDeviceKind;
+
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -35,6 +37,10 @@ class ShiftyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
+      // Let mouse and trackpad drag horizontal lists and carousels on web/desktop.
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.touch, PointerDeviceKind.mouse, PointerDeviceKind.trackpad, PointerDeviceKind.stylus},
+      ),
       // On web/desktop, show the app at phone width in the centre of the screen.
       builder: (context, child) => ColoredBox(
         color: const Color(0xFFF2F2F4),
