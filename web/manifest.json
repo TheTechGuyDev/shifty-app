@@ -1,11 +1,11 @@
 {
-    "name": "shifty",
-    "short_name": "shifty",
+    "name": "Shifty",
+    "short_name": "Shifty",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#1B1D21",
+    "theme_color": "#1B1D21",
+    "description": "Book trusted home services",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
