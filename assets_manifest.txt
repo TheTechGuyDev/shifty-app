@@ -1,0 +1,13 @@
+# Design assets exported from Figma. CI downloads any file below that is missing, then commits it.
+# Format: <path> <url>
+assets/images/onboarding/onb1_bg.png https://www.figma.com/api/mcp/asset/3840bf1d-a5cb-4412-a063-50f23dc74703.png
+assets/images/onboarding/onb1_illustration.png https://www.figma.com/api/mcp/asset/df0fa5c9-53f7-42d6-a09d-e6edf54fa90a.png
+assets/images/onboarding/onb1_tree_bubble.png https://www.figma.com/api/mcp/asset/4bbf8b2c-aca9-400c-b883-31f04ca3dcfc.png
+assets/images/onboarding/onb1_house_bubble.png https://www.figma.com/api/mcp/asset/ddf1c4f1-54b0-4598-b7f3-fe4c22620bdd.png
+assets/images/onboarding/onb2_bg.png https://www.figma.com/api/mcp/asset/ad781bb4-8e6a-4934-acfb-4d65ccf2044f.png
+assets/images/onboarding/onb2_truck.png https://www.figma.com/api/mcp/asset/1563599e-9fc1-418d-b8c5-8be9c025c055.png
+assets/images/onboarding/onb2_avatar_bubble.png https://www.figma.com/api/mcp/asset/e4b291f2-12ad-4e46-8833-6d41b708815c.png
+assets/images/onboarding/onb2_car_bubble.png https://www.figma.com/api/mcp/asset/20ffbfe7-e749-421a-83cc-2a4a989f9cd3.png
+assets/images/onboarding/onb2_heart_bubble.png https://www.figma.com/api/mcp/asset/d3dbfc0e-4f6b-4608-a00c-91e0dbfb9768.png
+assets/images/onboarding/onb3_bg.png https://www.figma.com/api/mcp/asset/2b126183-1ae3-4ae3-b4e0-217e75a911d0.png
+assets/images/onboarding/onb3_person.png https://www.figma.com/api/mcp/asset/3827d933-c08d-40d0-bbb8-f3090ca7fb77.png

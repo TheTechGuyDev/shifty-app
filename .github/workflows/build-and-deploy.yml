@@ -1,0 +1,77 @@
+name: Build and deploy web preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch missing design assets
+        run: |
+          set -e
+          grep -v '^#' assets_manifest.txt | while read -r path url; do
+            [ -z "$path" ] && continue
+            if [ ! -s "$path" ]; then
+              mkdir -p "$(dirname "$path")"
+              echo "Downloading $path"
+              curl -fsSL -o "$path" "$url"
+            fi
+          done
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Generate missing platform folders
+        run: flutter create --platforms=android,ios,web --org com.vastagency --project-name shifty .
+
+      - name: Commit assets and platform folders back to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          rm -f test/widget_test.dart
+          git add assets android ios web
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: add design assets and generated platform folders [skip ci]"
+            git push
+          fi
+
+      - name: Install packages
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Build web
+        run: flutter build web --release --base-href /shifty-app/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
