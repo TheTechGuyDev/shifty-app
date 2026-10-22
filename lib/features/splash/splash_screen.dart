@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/config/app_config.dart';
+import '../../main.dart' show bootApp;
 import '../../core/services/auth_service.dart';
 import '../../core/services/data_service.dart';
 import '../../core/theme/app_colors.dart';
@@ -27,6 +28,8 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+  bool _failed = false;
+
   late final AnimationController _c = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 1100),
@@ -48,6 +51,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           if (l.asset != null) precacheImage(AssetImage(l.asset!), context);
         }
       }
+    }
+    // Wait for the backend client to be ready (never blocks the first frame).
+    final ok = await bootApp();
+    if (!ok) {
+      if (mounted) setState(() => _failed = true);
+      return;
     }
     // Warm the service catalogue while the splash shows.
     DataService.categories().ignore();
@@ -149,6 +158,19 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                         color: AppColors.white,
                       ),
                     ),
+                    if (_failed) ...[
+                      const SizedBox(height: 24),
+                      Text('Can’t connect. Check your internet.', style: GoogleFonts.dmSans(fontSize: 14, color: AppColors.white)),
+                      const SizedBox(height: 12),
+                      TextButton(
+                        style: TextButton.styleFrom(backgroundColor: AppColors.white, padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 12)),
+                        onPressed: () {
+                          setState(() => _failed = false);
+                          _start();
+                        },
+                        child: Text('Try again', style: GoogleFonts.dmSans(fontWeight: FontWeight.w700, color: AppColors.primary)),
+                      ),
+                    ],
                   ],
                 ),
               ),
