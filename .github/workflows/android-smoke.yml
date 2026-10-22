@@ -55,6 +55,7 @@ jobs:
           mkdir -p /tmp/r && cp -r report/* /tmp/r/ 2>/dev/null || true
           git checkout --orphan ci-reports-new
           git rm -rf . > /dev/null
+          rm -rf shifty.apk report
           cp -r /tmp/r/* . 2>/dev/null || echo "no report" > README.txt
           git add -A
           git commit -m "Smoke test ${GITHUB_SHA::7}"

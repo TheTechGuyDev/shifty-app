@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+html, body, #root { height: 100%; }
+body { @apply bg-ink-50 text-ink-900 antialiased dark:bg-ink-950 dark:text-ink-100; font-feature-settings: 'ss01'; }
+
+@layer components {
+  .card { @apply rounded-2xl border border-ink-100 bg-white shadow-card dark:border-ink-800 dark:bg-ink-900; }
+  .input { @apply h-10 w-full rounded-xl border border-ink-200 bg-white px-3 text-sm outline-none transition placeholder:text-ink-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-100 dark:border-ink-700 dark:bg-ink-850 dark:focus:ring-brand-900/40; }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-500 dark:text-ink-400; }
+  .th { @apply whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-500 dark:text-ink-400; }
+  .td { @apply whitespace-nowrap px-4 py-3 text-sm; }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { @apply rounded-full bg-ink-200 dark:bg-ink-700; }
+}
+
+.leaflet-container { font-family: inherit; border-radius: 1rem; }
+.dark .leaflet-tile { filter: invert(1) hue-rotate(180deg) brightness(.9) contrast(.9); }

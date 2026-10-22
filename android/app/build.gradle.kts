@@ -34,6 +34,10 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+            // R8 code shrinking removed plugin methods (shared_preferences), which stopped
+            // the app on its launch screen. Keep all code in release builds.
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 }
