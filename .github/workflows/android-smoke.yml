@@ -1,0 +1,61 @@
+name: Android smoke test
+
+on:
+  workflow_run:
+    workflows: ["Build Android APK"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Download latest APK
+        run: curl -sSL -o shifty.apk https://github.com/${{ github.repository }}/releases/download/android-latest/shifty.apk
+
+      - name: Run on emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 33
+          arch: x86_64
+          target: google_apis
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          script: |
+            mkdir -p report
+            adb install -r shifty.apk
+            adb logcat -c
+            adb shell monkey -p com.vastagency.shifty -c android.intent.category.LAUNCHER 1 || adb shell am start -n com.vastagency.shifty/.MainActivity
+            sleep 25
+            adb exec-out screencap -p > report/after_25s.png
+            sleep 20
+            adb exec-out screencap -p > report/after_45s.png
+            adb logcat -d > report/logcat_full.txt || true
+            grep -iE "flutter|shifty|AndroidRuntime|FATAL|Exception|supabase" report/logcat_full.txt | head -400 > report/logcat.txt || true
+
+      - name: Save report to ci-reports branch
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git fetch origin ci-reports || true
+          mkdir -p /tmp/r && cp -r report/* /tmp/r/ 2>/dev/null || true
+          git checkout --orphan ci-reports-new
+          git rm -rf . > /dev/null
+          cp -r /tmp/r/* . 2>/dev/null || echo "no report" > README.txt
+          git add -A
+          git commit -m "Smoke test ${GITHUB_SHA::7}"
+          git push -f origin HEAD:ci-reports
