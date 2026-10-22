@@ -78,7 +78,7 @@ export function Bars({ data, x, series, money, height = 280, horizontal }: { dat
 export function Donut({ data, height = 220, center, money }: { data: { name: string; value: number }[]; height?: number; center?: string; money?: boolean }) {
   const total = data.reduce((a, b) => a + b.value, 0)
   return (
-    <div className="flex flex-col items-center gap-4 sm:flex-row">
+    <div className="flex flex-col items-center gap-4 sm:flex-row xl:flex-col 2xl:flex-row">
       <div className="relative shrink-0" style={{ width: height, height }}>
         <ResponsiveContainer>
           <PieChart>
@@ -95,7 +95,7 @@ export function Donut({ data, height = 220, center, money }: { data: { name: str
           <div className="text-xs text-ink-500">{center}</div>
         </div>
       </div>
-      <ul className="w-full space-y-2">
+      <ul className="w-full min-w-0 space-y-2">
         {data.map((d, i) => (
           <li key={d.name} className="flex items-center gap-2 text-sm">
             <span className="h-2.5 w-2.5 rounded-full" style={{ background: COLORS[i % COLORS.length] }} />

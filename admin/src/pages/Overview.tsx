@@ -92,7 +92,7 @@ export default function Overview() {
         <Loading />
       ) : (
         <>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
             <Stat label="Completed job value" value={compactMoney(d.gmv)} icon={<CircleDollarSign className="h-5 w-5" />} hint={`${num(d.done)} jobs completed`} onClick={() => go('/transactions')} />
             <Stat label="Commission earned" value={compactMoney(d.commission)} icon={<Percent className="h-5 w-5" />} tone="green" hint={`+ ${compactMoney(d.service_fees)} service fees`} onClick={() => go('/revenue')} />
             <Stat label="Bookings" value={num(d.bookings)} icon={<ClipboardList className="h-5 w-5" />} tone="blue" hint={`${num(d.active)} active · ${num(d.cancelled)} cancelled`} onClick={() => go('/bookings')} />

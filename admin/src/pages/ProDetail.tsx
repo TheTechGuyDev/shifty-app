@@ -34,7 +34,7 @@ export default function ProDetail() {
 
   const data = useLoad(async () => {
     const [pp, p, services, cats, hours, docs, jobs, payouts, reviews, portfolio, team, blocked, settings] = await Promise.all([
-      q<any>(db.from('professional_profiles').select('*').eq('user_id', id).single()),
+      q<any>(db.from('professional_profiles').select('*').eq('user_id', id).maybeSingle()),
       q<any>(db.from('profiles').select('*').eq('id', id).single()),
       q<any[]>(db.from('pro_services').select('*').eq('pro_id', id)),
       q<any[]>(db.from('service_categories').select('id, name')),
@@ -48,6 +48,7 @@ export default function ProDetail() {
       q<any[]>(db.from('blocked_dates').select('*').eq('pro_id', id).gte('day', new Date().toISOString().slice(0, 10))),
       q<any[]>(db.from('app_settings').select('*').eq('key', 'commission_pct')),
     ])
+    if (!pp) throw new Error('This person has not started a professional profile.')
     const catName = new Map(cats.map((c) => [c.id, c.name]))
     return { pp, p, services: services.map((s) => ({ ...s, name: catName.get(s.category_id) ?? 'Service' })), hours, docs, jobs, payouts, reviews, portfolio, team, blocked, defaultPct: Number(settings[0]?.value ?? 10) }
   }, [id])

@@ -61,7 +61,9 @@ export default function BookingDetail() {
   const open = b.status === 'pending' || b.status === 'active'
   const stageIdx = Math.max(0, STAGES.indexOf(b.progress ?? 'assigned'))
 
-  const act = (key: string, fn: () => Promise<unknown>, ok: string) => run(key, fn, ok).then((r) => r && data.reload())
+  const act = (key: string, fn: () => Promise<unknown>, ok: string) => run(key, fn, ok).then((r) => {
+      if (r) data.reload()
+    })
 
   const cancel = async () => {
     const reason = await confirm({ title: 'Cancel this booking?', message: 'The customer and professional are notified.', input: 'Reason (shown to the customer)', inputRequired: true, danger: true, confirm: 'Cancel booking' })

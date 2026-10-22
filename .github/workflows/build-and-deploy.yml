@@ -78,6 +78,29 @@ jobs:
           fi
           exit $code
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build admin dashboard
+        working-directory: admin
+        run: |
+          set +e
+          npm ci > npm.txt 2>&1 || npm install > npm.txt 2>&1
+          npm run build > admin.txt 2>&1
+          code=$?
+          cat admin.txt
+          if [ $code -ne 0 ]; then
+            msg=$(tail -30 admin.txt | sed ':a;N;$!ba;s/\n/%0A/g')
+            echo "::error title=Admin build::$msg"
+          fi
+          exit $code
+
+      - name: Put the admin dashboard under /admin
+        run: |
+          rm -rf build/web/admin
+          cp -r admin/dist build/web/admin
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

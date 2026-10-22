@@ -119,12 +119,12 @@ export function Card({ title, subtitle, actions, children, className, pad = true
 
 export function Stat({ label, value, icon, tone = 'orange', hint, onClick }: { label: string; value: ReactNode; icon: ReactNode; tone?: Tone; hint?: ReactNode; onClick?: () => void }) {
   return (
-    <button onClick={onClick} disabled={!onClick} className="card group flex flex-col p-5 text-left transition enabled:hover:-translate-y-0.5 enabled:hover:shadow-lg disabled:cursor-default">
+    <button onClick={onClick} disabled={!onClick} className="card group flex min-w-0 flex-col p-4 text-left sm:p-5 transition enabled:hover:-translate-y-0.5 enabled:hover:shadow-lg disabled:cursor-default">
       <div className="flex items-center gap-3">
         <span className={cx('inline-flex h-10 w-10 items-center justify-center rounded-xl', tones[tone])}>{icon}</span>
-        <span className="text-sm font-medium text-ink-500 dark:text-ink-400">{label}</span>
+        <span className="text-xs font-medium text-ink-500 dark:text-ink-400 sm:text-sm">{label}</span>
       </div>
-      <div className="mt-4 text-2xl font-bold tracking-tight">{value}</div>
+      <div className="mt-4 truncate text-xl font-bold tracking-tight sm:text-2xl">{value}</div>
       {hint && <div className="mt-1 text-xs text-ink-500 dark:text-ink-400">{hint}</div>}
     </button>
   )

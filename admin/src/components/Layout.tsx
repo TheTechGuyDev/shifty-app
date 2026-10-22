@@ -9,6 +9,7 @@ import { useAuth } from '../lib/auth'
 import { db, rpc } from '../lib/supabase'
 import { useLocal } from '../lib/hooks'
 import { Avatar, cx } from './ui'
+import ErrorBoundary from './ErrorBoundary'
 
 export type NavItem = { to: string; label: string; icon: ReactNode; perm: string; badge?: string }
 export const NAV: { section: string; items: NavItem[] }[] = [
@@ -172,7 +173,7 @@ export default function Layout() {
                     (mini ? (
                       <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-brand-400" />
                     ) : (
-                      <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-bold text-white group-[.bg-brand-500]:bg-white/25">{n}</span>
+                      <span className="rounded-full bg-white/10 px-2 text-[11px] font-bold leading-5 text-white">{n}</span>
                     ))}
                 </NavLink>
               )
@@ -217,7 +218,9 @@ export default function Layout() {
         />
         <main className="scrollbar-thin flex-1 overflow-y-auto">
           <div className="mx-auto max-w-[1440px] p-4 sm:p-6 lg:p-8">
-            <Outlet context={{ counts }} />
+            <ErrorBoundary resetKey={loc.pathname}>
+              <Outlet context={{ counts }} />
+            </ErrorBoundary>
           </div>
         </main>
       </div>
@@ -261,10 +264,10 @@ function Header(p: {
       </button>
       <button
         onClick={p.onSearch}
-        className="flex h-10 w-full max-w-md items-center gap-2 rounded-xl border border-ink-200 bg-ink-50 px-3 text-sm text-ink-400 transition hover:border-ink-300 dark:border-ink-800 dark:bg-ink-900"
+        className="flex h-10 min-w-0 flex-1 items-center gap-2 md:max-w-md rounded-xl border border-ink-200 bg-ink-50 px-3 text-sm text-ink-400 transition hover:border-ink-300 dark:border-ink-800 dark:bg-ink-900"
       >
         <Search className="h-4 w-4" />
-        <span className="flex-1 truncate text-left">Search bookings, people, pages…</span>
+        <span className="flex-1 truncate text-left"><span className="sm:hidden">Search</span><span className="hidden sm:inline">Search bookings, people, pages…</span></span>
         <kbd className="hidden items-center gap-0.5 rounded-md border border-ink-200 px-1.5 py-0.5 text-[10px] font-semibold dark:border-ink-700 sm:flex">
           <Command className="h-3 w-3" />K
         </kbd>
@@ -273,8 +276,8 @@ function Header(p: {
         <span className="text-sm text-ink-500">{hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'}, </span>
         <span className="text-sm font-semibold">{p.name.split(' ')[0]}</span>
       </div>
-      <div className="ml-auto flex items-center gap-1">
-        <button className="rounded-xl p-2.5 text-ink-500 hover:bg-ink-100 dark:hover:bg-ink-800" onClick={toggle} title="Toggle theme">
+      <div className="ml-auto flex shrink-0 items-center gap-0.5 sm:gap-1">
+        <button className="hidden rounded-xl p-2.5 text-ink-500 hover:bg-ink-100 dark:hover:bg-ink-800 sm:block" onClick={toggle} title="Toggle theme">
           {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </button>
         <div className="relative">

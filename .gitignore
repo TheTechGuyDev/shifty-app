@@ -19,3 +19,6 @@ build/
 **/android/app/profile
 **/android/app/release
 .env
+
+admin/node_modules/
+admin/dist/
