@@ -1,0 +1,400 @@
+10-22 09:05:38.750  3017  3017 W Bugle   : java.lang.RuntimeException: fetchFonts result is not OK. (2)
+10-22 09:05:38.918   947   947 D MediaPlayerList: Name of package changed: com.vastagency.shifty
+10-22 09:05:38.922   480   731 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10174, mPackageName='com.vastagency.shifty'}
+10-22 09:05:38.927   947   947 D MediaPlayerList: Name of package changed: com.vastagency.shifty
+10-22 09:05:39.160  3129  3129 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-22 09:05:39.179  3129  3129 I AndroidRuntime: Using default boot image
+10-22 09:05:39.179  3129  3129 I AndroidRuntime: Leaving lock profiling enabled
+10-22 09:05:39.416  3129  3129 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+10-22 09:05:39.417  3129  3129 W Monkey  : args: [-p, com.vastagency.shifty, -c, android.intent.category.LAUNCHER, 1]
+10-22 09:05:39.417  3129  3129 W Monkey  :  arg: "com.vastagency.shifty"
+10-22 09:05:39.418  3129  3129 W Monkey  : data="com.vastagency.shifty"
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@32e0c54
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@95cea6d
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@2f7cf33
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@26ac069
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@dd62b8f
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@565fa25
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@893f1ab
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@c2113a1
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@11dfd87
+10-22 09:05:39.472  3017  3087 W RcsClientLib: java.lang.IllegalArgumentException: Service not registered: bwbs@11a48dd
+10-22 09:05:39.551   947   947 D MediaPlayerList: Name of package changed: com.vastagency.shifty
+10-22 09:05:39.551   947   947 D MediaPlayerList: Name of package changed: com.vastagency.shifty
+10-22 09:05:39.552   480  1584 W BackupTransportManager: Package com.vastagency.shifty enabled setting: 0
+10-22 09:05:39.602   947   963 W UnsafeUtil: platform method missing - proto runtime falling back to safer methods: java.lang.NoSuchMethodException: sun.misc.Unsafe.copyMemory [class java.lang.Object, long, class java.lang.Object, long, long]
+10-22 09:05:39.621   480   497 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.vastagency.shifty/.MainActivity} from uid 2000
+10-22 09:05:39.740   977   977 D CarrierSvcBindHelper: onPackageAdded: com.vastagency.shifty
+10-22 09:05:39.746   480   815 D CoreBackPreview: Window{30ee00a u0 Splash Screen com.vastagency.shifty}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@cf19c3c, mPriority=0}
+10-22 09:05:39.766   480   512 I ActivityManager: Start proc 3202:com.vastagency.shifty/u0a174 for next-top-activity {com.vastagency.shifty/com.vastagency.shifty.MainActivity}
+10-22 09:05:39.791  3129  3129 I AndroidRuntime: VM exiting with result code 0.
+10-22 09:05:39.826  3202  3202 I stagency.shifty: Using CollectorTypeCC GC.
+10-22 09:05:39.827  3202  3202 W stagency.shifty: Unexpected CPU variant for x86: x86_64.
+10-22 09:05:39.827  3202  3202 W stagency.shifty: Known variants: atom, sandybridge, silvermont, kabylake, default
+10-22 09:05:39.870  3202  3202 D nativeloader: Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/lib/x86_64:/data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.vastagency.shifty
+10-22 09:05:39.871  3202  3202 D nativeloader: Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/lib/x86_64:/data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.vastagency.shifty
+10-22 09:05:39.888  3202  3202 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/lib/x86_64:/data/app/~~6ikhBrKZltxTtiWZDqToOg==/com.vastagency.shifty-CYkb9-b6q21gu_upvlPpEg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.vastagency.shifty
+10-22 09:05:39.897  3202  3202 V GraphicsEnvironment: ANGLE Developer option for 'com.vastagency.shifty' set to: 'default'
+10-22 09:05:39.898  3202  3202 V GraphicsEnvironment: ANGLE GameManagerService for com.vastagency.shifty: false
+10-22 09:05:40.023  3202  3202 W stagency.shifty: type=1400 audit(0.0:15): avc: denied { read } for name="max_map_count" dev="proc" ino=53379 scontext=u:r:untrusted_app:s0:c174,c256,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.vastagency.shifty
+10-22 09:05:40.128  3202  3244 I flutter : [IMPORTANT:flutter/shell/platform/android/android_context_gl_impeller.cc(104)] Using the Impeller rendering backend (OpenGLES).
+10-22 09:05:40.475   480   556 D CoreBackPreview: Window{382936e u0 com.vastagency.shifty/com.vastagency.shifty.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@8b6ba9c, mPriority=0}
+10-22 09:05:40.539  1577  2129 W AiAiAutofill: java.lang.SecurityException: caller is not user's Augmented Autofill Service
+10-22 09:05:41.091   977   977 D CarrierSvcBindHelper: onPackageModified: com.vastagency.shifty
+10-22 09:05:41.101   977   977 D ImsResolver: maybeAddedImsService, packageName: com.vastagency.shifty
+10-22 09:05:41.520   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:41.524   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:41.582   977   977 D ImsResolver: maybeAddedImsService, packageName: com.vastagency.shifty
+10-22 09:05:41.736  3202  3202 I flutter : Error: google_fonts was unable to load font DMSans-Regular because the following exception occurred:
+10-22 09:05:41.736  3202  3202 I flutter : Exception: Failed to load font with url https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf
+10-22 09:05:41.739  3202  3202 I flutter : See https://docs.flutter.dev/development/data-and-backend/networking#platform-notes.
+10-22 09:05:41.739  3202  3202 I flutter : If troubleshooting doesn't solve the problem, please file an issue at https://github.com/flutter/flutter/issues/new/choose.
+10-22 09:05:41.739  3202  3202 E flutter : [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: Failed to load font with url https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf
+10-22 09:05:41.739  3202  3202 E flutter : #0      _httpFetchFontAndSaveToDevice (package:google_fonts/src/google_fonts_base.dart:268)
+10-22 09:05:41.739  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:41.739  3202  3202 E flutter : #1      loadFontIfNecessary (package:google_fonts/src/google_fonts_base.dart:175)
+10-22 09:05:41.739  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:41.739  3202  3202 E flutter : #2      googleFontsTextStyle.<anonymous closure> (package:google_fonts/src/google_fonts_base.dart:112)
+10-22 09:05:41.739  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:41.739  3202  3202 E flutter : 
+10-22 09:05:41.740  3202  3202 I flutter : Error: google_fonts was unable to load font DMSans-Bold because the following exception occurred:
+10-22 09:05:41.740  3202  3202 I flutter : Exception: Failed to load font with url https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf
+10-22 09:05:41.740  3202  3202 I flutter : See https://docs.flutter.dev/development/data-and-backend/networking#platform-notes.
+10-22 09:05:41.740  3202  3202 I flutter : If troubleshooting doesn't solve the problem, please file an issue at https://github.com/flutter/flutter/issues/new/choose.
+10-22 09:05:41.740  3202  3202 E flutter : [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: Failed to load font with url https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf
+10-22 09:05:41.740  3202  3202 E flutter : #0      _httpFetchFontAndSaveToDevice (package:google_fonts/src/google_fonts_base.dart:268)
+10-22 09:05:41.740  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:41.740  3202  3202 E flutter : #1      loadFontIfNecessary (package:google_fonts/src/google_fonts_base.dart:175)
+10-22 09:05:41.740  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:41.740  3202  3202 E flutter : #2      googleFontsTextStyle.<anonymous closure> (package:google_fonts/src/google_fonts_base.dart:112)
+10-22 09:05:41.740  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:41.740  3202  3202 E flutter : 
+10-22 09:05:41.743  3202  3202 D FlutterGeolocator: Creating service.
+10-22 09:05:41.743  3202  3202 D FlutterGeolocator: Binding to location service.
+10-22 09:05:41.803  3202  3202 D FlutterGeolocator: Flutter engine connected. Connected engine count 1
+10-22 09:05:41.986  1268  2927 W ConfigFileUtils: Failed to read asset ChimeraModuleSetList.pb: java.io.FileNotFoundException: ChimeraModuleSetList.pb
+10-22 09:05:42.062  3334  3348 E RemoteProvisioningService: RemoteProvisioningException: 
+10-22 09:05:42.062  3334  3348 E RemoteProvisioningService: com.android.remoteprovisioner.RemoteProvisioningException: Error fetching GEEK
+10-22 09:05:42.231   284   895 I netd    : networkAddRouteParcel(100, RouteInfoParcel{destination: 10.0.2.0/24, ifName: wlan0, nextHop: , mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.04ms>
+10-22 09:05:42.236   480   694 E ConnectivityService: Exception in networkAddRouteParcel for non-gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+10-22 09:05:42.236   284   895 I netd    : networkAddRouteParcel(100, RouteInfoParcel{destination: 0.0.0.0/0, ifName: wlan0, nextHop: 10.0.2.2, mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.02ms>
+10-22 09:05:42.236   480   694 E ConnectivityService: Exception in networkAddRouteParcel for gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+10-22 09:05:42.541   480   694 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:42.551   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:42.620   480   500 I ActivityTaskManager: Displayed com.vastagency.shifty/.MainActivity: +2s994ms
+10-22 09:05:42.621   480   500 I ActivityTaskManager: Fully drawn com.vastagency.shifty/.MainActivity: +2s994ms
+10-22 09:05:42.623   977   977 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:42.636   480   694 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:42.645   480   687 W UnsafeUtil: platform method missing - proto runtime falling back to safer methods: java.lang.NoSuchMethodException: sun.misc.Unsafe.copyMemory [class java.lang.Object, long, class java.lang.Object, long, long]
+10-22 09:05:42.667   480  2338 D CoreBackPreview: Window{30ee00a u0 Splash Screen com.vastagency.shifty EXITING}: Setting back callback null
+10-22 09:05:42.673  3202  3202 I flutter : Error: google_fonts was unable to load font DMSans-Bold because the following exception occurred:
+10-22 09:05:42.673  3202  3202 I flutter : Exception: Failed to load font with url https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf
+10-22 09:05:42.673  3202  3202 I flutter : See https://docs.flutter.dev/development/data-and-backend/networking#platform-notes.
+10-22 09:05:42.673  3202  3202 I flutter : If troubleshooting doesn't solve the problem, please file an issue at https://github.com/flutter/flutter/issues/new/choose.
+10-22 09:05:42.674  3202  3202 E flutter : [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: Failed to load font with url https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/9909c4fcfbfe7b2c4a658b8d74eeb3ed38401a31cd4a3854546369c174f41440.ttf
+10-22 09:05:42.674  3202  3202 E flutter : #0      _httpFetchFontAndSaveToDevice (package:google_fonts/src/google_fonts_base.dart:268)
+10-22 09:05:42.674  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:42.674  3202  3202 E flutter : #1      loadFontIfNecessary (package:google_fonts/src/google_fonts_base.dart:175)
+10-22 09:05:42.674  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:42.674  3202  3202 E flutter : #2      googleFontsTextStyle.<anonymous closure> (package:google_fonts/src/google_fonts_base.dart:112)
+10-22 09:05:42.674  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:42.674  3202  3202 E flutter : 
+10-22 09:05:42.695   480  1688 W InputManager-JNI: Input channel object '30ee00a Splash Screen com.vastagency.shifty (client)' was disposed without first being removed with the input manager!
+10-22 09:05:42.716  1494  1494 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.vastagency.shifty fieldId=-1 fieldName=null extras=null}, false)
+10-22 09:05:42.722  3202  3202 I flutter : Error: google_fonts was unable to load font DMSans-Regular because the following exception occurred:
+10-22 09:05:42.722  3202  3202 I flutter : Exception: Failed to load font with url https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf
+10-22 09:05:42.722  3202  3202 I flutter : See https://docs.flutter.dev/development/data-and-backend/networking#platform-notes.
+10-22 09:05:42.722  3202  3202 I flutter : If troubleshooting doesn't solve the problem, please file an issue at https://github.com/flutter/flutter/issues/new/choose.
+10-22 09:05:42.722  3202  3202 E flutter : [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Exception: Failed to load font with url https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf: ClientException with SocketException: Failed host lookup: 'fonts.gstatic.com' (OS Error: No address associated with hostname, errno = 7), uri=https://fonts.gstatic.com/s/a/2dbeb0e218984395ccb1b649dbe39bfecf9da420bf69fdc2da2860c2c9dc3324.ttf
+10-22 09:05:42.722  3202  3202 E flutter : #0      _httpFetchFontAndSaveToDevice (package:google_fonts/src/google_fonts_base.dart:268)
+10-22 09:05:42.722  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:42.722  3202  3202 E flutter : #1      loadFontIfNecessary (package:google_fonts/src/google_fonts_base.dart:175)
+10-22 09:05:42.722  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:42.722  3202  3202 E flutter : #2      googleFontsTextStyle.<anonymous closure> (package:google_fonts/src/google_fonts_base.dart:112)
+10-22 09:05:42.722  3202  3202 E flutter : <asynchronous suspension>
+10-22 09:05:42.722  3202  3202 E flutter : 
+10-22 09:05:42.889   925   944 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-22 09:05:42.910   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:42.949   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:42.955   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.363   480   694 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.384   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:43.474   925  3461 W UnsafeUtil: platform method missing - proto runtime falling back to safer methods: java.lang.NoSuchMethodException: sun.misc.Unsafe.copyMemory [class java.lang.Object, long, class java.lang.Object, long, long]
+10-22 09:05:43.583   480   694 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.702   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.702   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.707   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.707   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:43.869   480   716 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:44.292  1268  2938 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:44.299  1708  3537 W ProviderInstaller: Failed to report request stats: java.lang.NoSuchMethodException: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats2 [class android.content.Context, long, long]
+10-22 09:05:44.339   480   716 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:44.413   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:44.413   480   685 W BestClock: java.time.DateTimeException: Missing NTP fix
+10-22 09:05:44.507  1048  2715 W ChimeraSrvcProxy: Failed to read the buffer size file. Using default NullBinder reply size. java.io.FileNotFoundException: /data/user_de/0/com.google.android.gms/files/binder_buffer_size.txt: open failed: ENOENT (No such file or directory)
+10-22 09:05:44.561  1048  1986 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:44.707  1048  3371 I NearbyDiscovery: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:44.730  1048  2715 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+10-22 09:05:44.738  1048  2715 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+10-22 09:05:44.829  1268  3151 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:44.895  1048  1710 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+10-22 09:05:44.930  1048  1986 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:45.031  1268  3151 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:45.519  1268  3119 W Icing   : Failed to get Lockbox signed-in status: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:45.725  1048  3522 E CCTFlatFileLogStore: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:46.023  1268  3119 W Icing   : Failed to get Lockbox signed-in status: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:46.070  3202  3639 D ProfileInstaller: Installing profile for com.vastagency.shifty
+10-22 09:05:46.791  1048  2268 E dlpn    : RuntimeException while executing runnable dlqc{qze@f0a4846} with executor MoreExecutors.directExecutor()
+10-22 09:05:46.791  1048  2268 E dlpn    : java.lang.NullPointerException: Attempt to get length of null array
+10-22 09:05:46.954   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:47.009   977   977 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:47.279  1048  3371 I NearbyDiscovery: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:47.282  1268  2943 E constellation: java.io.IOException: AUTHENTICATION_FAILED
+10-22 09:05:47.544  1268  2920 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:47.674  1648  2292 E FirebaseInstanceId: Topic sync or token retrieval failed on hard failure exceptions: AUTHENTICATION_FAILED. Won't retry the operation.
+10-22 09:05:47.723  1708  2488 E FirebaseInstanceId: Topic sync or token retrieval failed on hard failure exceptions: AUTHENTICATION_FAILED. Won't retry the operation.
+10-22 09:05:47.737  1048  2819 W SemanticLocation: java.util.concurrent.TimeoutException: Waited 5000 milliseconds (plus 129293 nanoseconds delay) for dlnx@54b62cd[status=PENDING, info=[function=[bzrs@c1b782]]]
+10-22 09:05:47.783  2145  2815 E FirebaseInstanceId: Topic sync or token retrieval failed on hard failure exceptions: AUTHENTICATION_FAILED. Won't retry the operation.
+10-22 09:05:47.807  1268  2920 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:47.818   284   895 I netd    : networkAddInterface(101, eth0) -> ServiceSpecificException(64, "Machine is not on the network") <0.03ms>
+10-22 09:05:47.820   480   694 W ConnectivityService: Exception adding interface: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+10-22 09:05:47.823   284   895 I netd    : networkAddRouteParcel(101, RouteInfoParcel{destination: 10.0.2.0/24, ifName: eth0, nextHop: , mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.02ms>
+10-22 09:05:47.823   480   694 E ConnectivityService: Exception in networkAddRouteParcel for non-gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+10-22 09:05:47.823   284   895 I netd    : networkAddRouteParcel(101, RouteInfoParcel{destination: 0.0.0.0/0, ifName: eth0, nextHop: 10.0.2.2, mtu: 1500}) -> ServiceSpecificException(64, "Machine is not on the network") <0.01ms>
+10-22 09:05:47.823   480   694 E ConnectivityService: Exception in networkAddRouteParcel for gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+10-22 09:05:47.942   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:49.039   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:49.932  1102  1120 W UnsafeUtil: platform method missing - proto runtime falling back to safer methods: java.lang.NoSuchMethodException: sun.misc.Unsafe.copyMemory [class java.lang.Object, long, class java.lang.Object, long, long]
+10-22 09:05:50.056   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:50.108   977   977 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:50.189   925   944 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-22 09:05:50.223   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:50.503   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:05:52.548  1268  3700 I BlockstoreStorage: Clearing Blockstore Data for package com.vastagency.shifty [CONTEXT service_id=258 ]
+10-22 09:05:52.894  1048  3624 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/default_model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+10-22 09:05:52.894  1048  3624 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:05:52.942   480  2178 E RecoverySnapshotStorage: java.io.FileNotFoundException: /data/system/recoverablekeystore/snapshots/10120.xml: open failed: ENOENT (No such file or directory)
+10-22 09:05:52.942   480  2178 E RecoverySnapshotStorage: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:05:52.981  1048  3624 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+10-22 09:05:52.981  1048  3624 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:05:53.214  1048  3624 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+10-22 09:05:53.214  1048  3624 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:05:53.704  3017  3880 E AssistantConnector: java.lang.IllegalStateException: Failed to query AGSA value. This is most likely caused by a Google signature check failure. Please make sure both of the AGSA app and the client app are either release or dev builds.
+10-22 09:05:53.716  1048  2819 E bwel    : java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:05:54.811   480   815 E RecoverySnapshotStorage: java.io.FileNotFoundException: /data/system/recoverablekeystore/snapshots/10120.xml: open failed: ENOENT (No such file or directory)
+10-22 09:05:54.811   480   815 E RecoverySnapshotStorage: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:05:55.004  1578  2173 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=5000, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=<unknown>, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1725920748, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=80000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/ringtones/Hydra.ogg, _size=22924, album=ringtones, genre=null, is_alarm=0, title=Hydra, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-22 09:05:55.004  1578  2173 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-22 09:05:55.136  1048  3268 W NetworkScheduler: java.lang.IllegalArgumentException: Only the following extra parameter types are supported: Integer, Long, Double, String, Boolean, and nested Bundles with the same restrictions.
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: [WrappingKeyManager] InternalRecoveryServiceException during wrapping key generation [CONTEXT service_id=172 ]
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: android.security.keystore.recovery.InternalRecoveryServiceException: Failed to import secret key.
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.wrapUnexpectedServiceSpecificException(RecoveryController.java:773)
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: Caused by: android.os.ServiceSpecificException: Failed to import secret key. (code 22)
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3025)
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:55.239  1268  2943 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:55.375  3017  3082 W Bugle   : java.lang.IllegalStateException: Failed to query AGSA value. This is most likely caused by a Google signature check failure. Please make sure both of the AGSA app and the client app are either release or dev builds.
+10-22 09:05:55.564  1048  3624 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:55.791  1048  3624 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:55.888  1268  2843 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:56.076  1268  2843 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:56.848  1048  1332 E enyj    : java.lang.RuntimeException: ManagedChannel allocation site
+10-22 09:05:57.005  1048  3267 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:57.118  1048  3267 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:57.555  1268  2943 E Vision  : Couldn't read checkbot setting: android.provider.Settings$SettingNotFoundException: multi_cb
+10-22 09:05:58.063  1048  2268 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:58.083  1048  2268 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:58.655  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.sync.syncadapter.DocsSyncAdapterService does not exist in com.google.android.apps.docs
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.655  3985  4008 W err     : Caused by: android.os.RemoteException: Remote stack trace:
+10-22 09:05:58.655  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.sync.syncadapter.DocsSyncAdapterService does not exist in com.google.android.apps.docs
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.655  3985  4008 W err     : Caused by: android.os.RemoteException: Remote stack trace:
+10-22 09:05:58.655  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.drive.directsharing.ChooserTargetService does not exist in com.google.android.apps.docs
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.655  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.drive.directsharing.ChooserTargetService does not exist in com.google.android.apps.docs
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.655  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.683  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.documentcreation.WidgetDocumentCreatorActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.683  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.683  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.683  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.683  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.684  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.documentcreation.WidgetDocumentCreatorActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.684  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.684  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.684  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.684  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.686  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.documentcreation.ExternalDocumentCreatorActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.686  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.documentcreation.ExternalDocumentCreatorActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.686  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.widgets.NewDocumentWidgetActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.686  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.widgets.NewDocumentWidgetActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.686  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.688  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.export.FileContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.688  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.688  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.688  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.688  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.689  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.export.FileContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.689  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.689  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.689  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.689  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.690  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.copypaste.AndroidClipboardContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.690  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.copypaste.AndroidClipboardContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.690  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.692  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.copypaste.AndroidImageContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.692  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.copypaste.AndroidImageContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.692  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.699  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.inserttool.clipboard.InsertToolClipboardContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.699  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.699  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.699  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.699  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.700  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.inserttool.clipboard.InsertToolClipboardContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.700  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.700  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.700  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.700  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.701  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.inserttool.clipboard.InsertToolImageContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.701  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.shared.inserttool.clipboard.InsertToolImageContentProvider does not exist in com.google.android.apps.docs
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.701  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.702  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.kix.conversion.KixOnlineImportActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.702  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.kix.conversion.KixOnlineImportActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.702  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.703  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.ritz.conversion.RitzOnlineImportActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.703  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.ritz.conversion.RitzOnlineImportActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.703  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.704  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.punch.conversion.PunchOnlineImportActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:58.704  3985  4008 W err     : java.lang.IllegalArgumentException: Component class com.google.android.apps.docs.editors.punch.conversion.PunchOnlineImportActivity does not exist in com.google.android.apps.docs
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3015)
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:05:58.704  3985  4008 W err     : 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:05:59.510  1268  3151 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:59.591  1268  3703 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:59.622  1268  3151 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:05:59.649  1268  3703 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:06:00.011  1268  2843 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:06:00.203  1268  2843 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:06:00.391  1578  2173 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=3498, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=pdx, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1725920748, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=80000, cd_track_number=2d315cR, xmp=[], year=null, _data=/product/media/audio/ringtones/CANISMAJOR.ogg, _size=31170, album=ringtones, genre=null, is_alarm=0, title=Canis Major, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-22 09:06:00.391  1578  2173 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-22 09:06:01.122   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:06:01.203   977   977 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:06:01.304   925   944 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-22 09:06:01.333   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:06:01.683   977   977 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: ImsService is not available for the subscription specified. (code: 1)
+10-22 09:06:01.752   480  2525 E RecoverySnapshotStorage: java.io.FileNotFoundException: /data/system/recoverablekeystore/snapshots/10120.xml: open failed: ENOENT (No such file or directory)
+10-22 09:06:01.752   480  2525 E RecoverySnapshotStorage: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: [WrappingKeyManager] InternalRecoveryServiceException during wrapping key generation [CONTEXT service_id=172 ]
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: android.security.keystore.recovery.InternalRecoveryServiceException: Failed to import secret key.
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.wrapUnexpectedServiceSpecificException(RecoveryController.java:773)
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: Caused by: android.os.ServiceSpecificException: Failed to import secret key. (code 22)
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3025)
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: 	at android.os.Parcel.createException(Parcel.java:2995)
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2978)
+10-22 09:06:01.808  1268  3699 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2920)
+10-22 09:06:02.071  1048  4077 W NetworkScheduler: java.lang.IllegalArgumentException: Only the following extra parameter types are supported: Integer, Long, Double, String, Boolean, and nested Bundles with the same restrictions.
+10-22 09:06:02.123  1048  1332 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:06:02.566  1048  1332 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+10-22 09:06:02.636  1048  1332 W GLSUser : [AppCertManager] Exception while requesting key: 
+10-22 09:06:02.636  1048  1332 W GLSUser : java.io.IOException: Invalid device key response.
+10-22 09:06:02.671  3017  3084 D StrictMode: 	at android.os.Parcel.readExceptionCode(Parcel.java:2956)
+10-22 09:06:02.671  3017  3084 D StrictMode: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:139)
+10-22 09:06:04.162  4160  4225 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:06:06.864  1048  2844 W AsyncOperation: OperationException[Status{statusCode=unknown status code: 29503, resolution=null}]
+10-22 09:06:07.620  1048  2844 W AsyncOperation: OperationException[Status{statusCode=unknown status code: 29503, resolution=null}]
+10-22 09:06:07.672  1048  2872 W AsyncOperation: OperationException[Status{statusCode=Stale snapshot for com.google.android.apps.messaging#com.google.android.apps.messaging(change count changed - expected 2  but was 0), resolution=null}]
+10-22 09:06:08.269  1048  2872 W AsyncOperation: OperationException[Status{statusCode=Stale snapshot for com.google.android.googlequicksearchbox(change count changed - expected 2  but was 1), resolution=null}]
+10-22 09:06:08.538  1048  2844 W AsyncOperation: OperationException[Status{statusCode=Empty (package not registered?) or malformed snapshot token for null: , resolution=null}]
+10-22 09:06:09.060  1705  2032 W CorpusConfigHelper: android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+10-22 09:06:09.589  1705  2032 W CorpusConfigHelper: android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+10-22 09:06:10.700  1705  2034 W CorpusConfigHelper: android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+10-22 09:06:12.169  1705  2025 W CorpusConfigHelper: android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+10-22 09:06:12.335   754  4626 W RingtonePlayer: java.io.IOException: setDataSource failed.: status=0x80000000
+10-22 09:06:13.098  3202  3214 I stagency.shifty: Background concurrent copying GC freed 13956(939KB) AllocSpace objects, 9(168KB) LOS objects, 49% free, 2323KB/4647KB, paused 32us,6us total 133.400ms
+10-22 09:06:13.383  4160  4160 W GnpSdk  : java.lang.NullPointerException: Unable to get GrowthKit Component from host app: com.google.android.calendar
+10-22 09:06:16.331  1268  4149 E Icing   : Cursor call threw an exception: no such table: Alarm_cross_device_com.google.android.deskclock_seq_table (code 1 SQLITE_ERROR): , while compiling: SELECT * FROM [Alarm_cross_device_com.google.android.deskclock_seq_table] WHERE seqno>0 AND tag IS NULL ORDER BY seqno LIMIT 20
+10-22 09:06:16.549  1268  4149 E Icing   : Cursor call threw an exception: no such table: Stopwatch_cross_device_com.google.android.deskclock_seq_table (code 1 SQLITE_ERROR): , while compiling: SELECT * FROM [Stopwatch_cross_device_com.google.android.deskclock_seq_table] WHERE seqno>0 AND tag IS NULL ORDER BY seqno LIMIT 20
+10-22 09:06:17.166  1705  1705 W SnapshotHandler: java.io.FileNotFoundException: /data/user/0/com.google.android.googlequicksearchbox/files/phenotype/shared/com.google.android.libraries.notifications#com.google.android.googlequicksearchbox.pb: open failed: ENOENT (No such file or directory)
+10-22 09:06:17.166  1705  1705 W SnapshotHandler: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:06:17.330  4707  4763 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:06:17.403  1705  2335 W SnapshotHandler: java.io.FileNotFoundException: /data/user/0/com.google.android.googlequicksearchbox/files/phenotype/shared/com.google.android.libraries.notifications.platform#com.google.android.googlequicksearchbox.pb: open failed: ENOENT (No such file or directory)
+10-22 09:06:17.403  1705  2335 W SnapshotHandler: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-22 09:06:18.421  1705  2065 E cr_CronetUrlRequestContext: Exception in upload method
+10-22 09:06:19.822  1578  2173 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=0, duration=4383, is_ringtone=0, album_artist=null, resolution=null, orientation=null, artist=pdx, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1725920748, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=1, bitrate=96000, cd_track_number=0, xmp=[], year=null, _data=/product/media/audio/notifications/vega.ogg, _size=29476, album=Unknown, genre=Unknown, is_alarm=0, title=Vega, track=0, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-22 09:06:19.822  1578  2173 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-22 09:06:22.137   480   687 W FileUtils: android.system.ErrnoException: chmod failed: ENOENT (No such file or directory)
+10-22 09:06:22.222  1102  1117 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-22 09:06:22.449  1578  1770 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android
+10-22 09:06:22.455  1578  1770 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android/media
+10-22 09:06:24.110  5063  5089 E IndexablesProvider: Provider querying exception:
+10-22 09:06:24.110  5063  5089 E IndexablesProvider: java.lang.IllegalStateException: We should initialize FormFactorUtils before getting instance.
+10-22 09:06:26.249  1268  4238 W PhenotypeRegOp: java.util.concurrent.TimeoutException: Timed out waiting for Task
+10-22 09:06:27.057   480   556 E RecoverySnapshotStorage: java.io.FileNotFoundException: /data/system/recoverablekeystore/snapshots/10120.xml: open failed: ENOENT (No such file or directory)
